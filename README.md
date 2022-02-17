@@ -2,7 +2,7 @@ ___
 # Code Club - Computational Hydrology
 ___
 
-This repository has been created to colate all the code developed as part of the code club of the computational hydrology overseen by Dr. Elizabeth Lewis at Newcastle University.
+This repository has been created to colate all the code developed as part of the code club of the computational hydrology group overseen by Dr. Elizabeth Lewis at Newcastle University.
 
 The following is a list of the task overtaken as part of the group:
 
