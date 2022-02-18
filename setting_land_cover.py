@@ -144,7 +144,7 @@ nrows = df_pivot.shape[0]
 xllcorner = int(list(df_pivot.columns)[0])
 yllcorner  = int(df_pivot.index[-1])
 cellsize = 5000
-NODATA_value = -9999
+no_data_val = -9999
 
 # 8. Add header to .txt file
 # copy current information in text file
@@ -160,7 +160,7 @@ append_copy.write(
     "xllcorner     " + str(xllcorner) +  "\n" +
     "yllcorner     " + str(yllcorner) + "\n" +
     "cellsize      " + str(cellsize) + "\n" +
-    "NODATA_value  " + str(NODATA_value) + "\n")
+    "NODATA_value  " + str(no_data_val) + "\n")
 # paste the content that was in the .txt file before the header
 append_copy.write(original_text)
 # save .txt file
