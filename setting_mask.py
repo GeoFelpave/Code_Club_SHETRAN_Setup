@@ -2,7 +2,7 @@
  
  Title              :setting_mask.py
  Description        :Create the catchment mask necessary for SHETRAN
- Author             :LF Velasquez
+ Author             :LF Velasquez - I Rohrmueller 
  Date               :Feb 2022
  Version            :1.1
  Usage              :setting_mask.py

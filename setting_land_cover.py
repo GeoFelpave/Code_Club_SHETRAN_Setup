@@ -2,7 +2,7 @@
  
  Title              :setting_land_cover.py
  Description        :Create the land cover text file necessary for SHETRAN
- Author             :LF Velasquez
+ Author             :LF Velasquez - I Rohrmueller 
  Date               :Feb 2022
  Version            :1.0
  Usage              :setting_land_cover.py
