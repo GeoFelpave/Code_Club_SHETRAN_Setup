@@ -11,3 +11,4 @@ The following is a list of the task overtaken as part of the group:
 
 As part of this task we aim to develop a series of processes that will enable the creation of the files necessary as inputs for the physically-based model SHETRAN
   1. setting_mask.py -> this uses a catchment geometry (shapefile) to generate the catchment mask for SHETRAN. The process uses pyQgis.
+  2. setting_land_cover.py -> this uses the land cover .tif file to generate the catchment land cover .txt file based on the largest coverage per cell in the grid. The process uses pyQgis.

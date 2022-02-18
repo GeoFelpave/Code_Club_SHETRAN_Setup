@@ -4,7 +4,7 @@
  Description        :Create the catchment mask necessary for SHETRAN
  Author             :LF Velasquez
  Date               :Feb 2022
- Version            :1.0
+ Version            :1.1
  Usage              :setting_mask.py
  Notes              :
                     - Before starting the process the files containing the sys 
@@ -143,7 +143,7 @@ selection_one = vlayer_grid.selectedFeatures() # only use selected features
 # update selected features
 with edit(vlayer_grid):
     for feat in selection_one:
-        feat['SHETRAN_ID'] = 1
+        feat['SHETRAN_ID'] = '0'
         vlayer_grid.updateFeature(feat)
 # Clear selection before other process
 vlayer_grid.removeSelection()
@@ -158,7 +158,7 @@ with edit(vlayer_grid):
     for feat in selection_zero:
         # zero needs to be passed as int as otherwise it won't work - needs further checks 
         # https://news.icourban.com/crypto-https-gis.stackexchange.com/questions/363927/pyqgis-inline-function-to-replace-null-values-with-0-in-all-fields-not-coalesc#
-        feat['SHETRAN_ID'] = '0' 
+        feat['SHETRAN_ID'] = '-9999' 
         vlayer_grid.updateFeature(feat)
 # Clear selection before other process
 vlayer_grid.removeSelection()
@@ -174,14 +174,45 @@ for f in vlayer_grid.getFeatures():
 
 df = pd.DataFrame(row_list, columns=columns)
 
+# 6. Pivot dataframe to replicate SHETRAN format
 # Pivot dataframe using X as column and Y as rows 
 df_pivot = df.pivot(index='Y', columns='X', values='SHETRAN_ID')
 df_pivot = df_pivot.sort_index(ascending=False)
 # print(df_pivot)
 
-# 6. Save dataframe as a text file
-np.savetxt(Path(dir_abs / 'final_mask_SHETRAN.txt'), df_pivot.values, fmt='%d')
-# df_pivot.to_csv(Path(dir_abs / 'final_mask_SHETRAN.csv'), index=False, header=False)
+# 7. Save dataframe as a text file
+filename = Path(dir_abs / 'final_mask_SHETRAN.txt')
+np.savetxt(filename, df_pivot.values, fmt='%d')
+
+# 8. Create headear needed for SHETRAN
+# Defining text file header
+ncols = df_pivot.shape[1]
+nrows = df_pivot.shape[0]
+xllcorner = int(list(df_pivot.columns)[0])
+yllcorner  = int(df_pivot.index[-1])
+cellsize = 5000
+NODATA_value = -9999
+
+# 9. Add header to .txt file
+# copy current information in text file
+append_copy = open(filename, "r")
+original_text = append_copy.read()
+append_copy.close()
+
+# add header information - this delete any information in the text file
+append_copy = open(filename, "w")
+append_copy.write(
+    "ncols         " + str(ncols) + "\n" + 
+    "nrows         " + str(nrows) +  "\n" +
+    "xllcorner     " + str(xllcorner) +  "\n" +
+    "yllcorner     " + str(yllcorner) + "\n" +
+    "cellsize      " + str(cellsize) + "\n" +
+    "NODATA_value  " + str(NODATA_value) + "\n")
+# paste the content that was in the .txt file before the header
+append_copy.write(original_text)
+# save .txt file
+append_copy.close()
+
 
 # =============================================================================
 # End Process
