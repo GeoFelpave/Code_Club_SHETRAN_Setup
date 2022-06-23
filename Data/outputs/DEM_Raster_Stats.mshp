@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SAGA_METADATA>
+  <HISTORY saga-version="2.3.2">
+    <MODULE library="shapes_grid" id="2" name="Grid Statistics for Polygons">
+      <OPTION type="grid_system" id="PARAMETERS_GRID_SYSTEM" name="Grid system">
+        <CELLSIZE>86.2499978971</CELLSIZE>
+        <XMIN>340021.95165715832</XMIN>
+        <XMAX>419975.69970777002</XMAX>
+        <YMIN>520153.7566371524</YMIN>
+        <YMAX>620031.2542019942</YMAX>
+      </OPTION>
+      <OPTION type="choice" id="NAMING" name="Field Naming" index="0">grid number</OPTION>
+      <OPTION type="choice" id="METHOD" name="Method" index="0">simple and fast</OPTION>
+      <OPTION type="boolean" id="COUNT" name="Number of Cells">FALSE</OPTION>
+      <OPTION type="boolean" id="MIN" name="Minimum">TRUE</OPTION>
+      <OPTION type="boolean" id="MAX" name="Maximum">FALSE</OPTION>
+      <OPTION type="boolean" id="RANGE" name="Range">FALSE</OPTION>
+      <OPTION type="boolean" id="SUM" name="Sum">FALSE</OPTION>
+      <OPTION type="boolean" id="MEAN" name="Mean">TRUE</OPTION>
+      <OPTION type="boolean" id="VAR" name="Variance">FALSE</OPTION>
+      <OPTION type="boolean" id="STDDEV" name="Standard Deviation">FALSE</OPTION>
+      <OPTION type="integer" id="QUANTILE" name="Quantile">0</OPTION>
+      <INPUT_LIST type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM">
+        <DEMLayer type="grid_list" id="GRIDS" name="Grids" system="PARAMETERS_GRID_SYSTEM">
+          <FILE>C:/Users/B8047805/AppData/Local/Temp/processing_RLQJBy/64e89a623a3840a99026f7a14706d0a8/DEMLayer.sgrd</FILE>
+        </DEMLayer>
+      </INPUT_LIST>
+      <INPUT type="shapes" id="POLYGONS" name="Polygons">
+        <FILE>c:\Users\B8047805\OneDrive - Newcastle University\05_ModelBuild\03_DataProcessing\01_Workflow_Creating_SHETRAN_Input_Files\Data\outputs\catchm_mask.shp</FILE>
+      </INPUT>
+      <OUTPUT type="shapes" id="RESULT" name="Statistics">catchm_mask [Grid Statistics]</OUTPUT>
+    </MODULE>
+  </HISTORY>
+  <SOURCE>
+    <FILE></FILE>
+    <DATABASE>
+      <FIELDS>
+        <FIELD TYPE="LONGINT">id</FIELD>
+        <FIELD TYPE="DOUBLE">left</FIELD>
+        <FIELD TYPE="DOUBLE">top</FIELD>
+        <FIELD TYPE="DOUBLE">right</FIELD>
+        <FIELD TYPE="DOUBLE">bottom</FIELD>
+        <FIELD TYPE="DOUBLE">X</FIELD>
+        <FIELD TYPE="DOUBLE">Y</FIELD>
+        <FIELD TYPE="LONGINT">SHETRAN_ID</FIELD>
+        <FIELD TYPE="DOUBLE">G01_MIN</FIELD>
+        <FIELD TYPE="DOUBLE">G01_MEAN</FIELD>
+      </FIELDS>
+    </DATABASE>
+    <PROJECTION></PROJECTION>
+  </SOURCE>
+  <DESCRIPTION></DESCRIPTION>
+</SAGA_METADATA>

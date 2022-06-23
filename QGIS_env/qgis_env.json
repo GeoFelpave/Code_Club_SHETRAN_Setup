@@ -1,0 +1,22 @@
+{
+    "USER": "geofelpave",
+    "__CFBundleIdentifier": "org.qgis.qgis3",
+    "COMMAND_MODE": "unix2003",
+    "LOGNAME": "geofelpave",
+    "PATH": "/usr/bin:/bin:/usr/sbin:/sbin",
+    "PYQGIS_STARTUP": "pyqgis-startup.py",
+    "SSH_AUTH_SOCK": "/private/tmp/com.apple.launchd.8KngqQOWKX/Listeners",
+    "SHELL": "/bin/zsh",
+    "HOME": "/Users/geofelpave",
+    "QT_AUTO_SCREEN_SCALE_FACTOR": "1",
+    "__CF_USER_TEXT_ENCODING": "0x1F5:0x0:0x2",
+    "XPC_SERVICE_NAME": "application.org.qgis.qgis3.3861701.3863097",
+    "XPC_FLAGS": "0x0",
+    "GDAL_DRIVER_PATH": "/Applications/QGIS-LTR.app/Contents/MacOS/lib/gdalplugins",
+    "GDAL_DATA": "/Applications/QGIS-LTR.app/Contents/Resources/gdal",
+    "PYTHONHOME": "/Applications/QGIS-LTR.app/Contents/MacOS",
+    "GDAL_PAM_PROXY_DIR": "/Users/geofelpave/Library/Application Support/QGIS/QGIS3/profiles/default/gdal_pam/",
+    "LC_CTYPE": "UTF-8",
+    "SSL_CERT_DIR": "/Applications/QGIS-LTR.app/Contents/Resources/certs",
+    "SSL_CERT_FILE": "/Applications/QGIS-LTR.app/Contents/Resources/certs/certs.pem"
+}

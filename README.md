@@ -1,14 +1,12 @@
-___
-# Code Club - Computational Hydrology
-___
+# ------------------------
+#  SHETRAN_Input_Files
+# ------------------------
 
-This repository has been created to colate all the code developed as part of the code club of the computational hydrology group overseen by Dr. Elizabeth Lewis at Newcastle University.
+Collaborators: Luis FP Velasquez (LV) and Irina Rohrmueller (IR)
 
-The following is a list of the task overtaken as part of the group:
+This repository includes scripts to automatically generate input files for the physically-based, spatially distributed hydrological mdoel SHETRAN.
 
-## Task 1. SHETRAN Input Files -  Feb 2022
-**participants:** *Irina Rohrmueller (IR) and Luis FP Velasquez (LV)*
-
-As part of this task we aim to develop a series of processes that will enable the creation of the files necessary as inputs for the physically-based model SHETRAN
-  1. setting_mask.py -> this uses a catchment geometry (shapefile) to generate the catchment mask for SHETRAN. The process uses pyQgis.
-  2. setting_land_cover.py -> this uses the land cover .tif file to generate the catchment land cover .txt file based on the largest coverage per cell in the grid. The process uses pyQgis.
+  1. 01_setting_mask.py uses a catchment boundary in shapefile format to generate a catchment mask in text format.
+  2. 02_setting_DEM.py uses a DEM in raster format to generate two separate DEMs, one containing the minimum elevation and one the average elevation for each grid cell, both in text format.
+  3. 03_setting_land_cover.py uses a land cover map in raster format to generate a land cover file in text format.
+  4. 04_setting_lake_map.py uses a lake map in shapefile format to generate a lake map in text format.
